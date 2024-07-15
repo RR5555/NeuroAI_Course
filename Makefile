@@ -7,7 +7,7 @@ docker-push-cuda: ## Push cuda Docker img
 	docker push rr5555/neuroai:jammy-cuda
 
 docker-run-cuda: ## Run cuda Docker container
-	docker run -v .:/root/neuroAI -itd --name neuroAI rr5555/neuroai:jammy-cuda
+	docker run --gpus all -v .:/root/neuroAI -itd --name neuroAI rr5555/neuroai:jammy-cuda
 
 # https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 .PHONY: help
